@@ -8,6 +8,7 @@ function App() {
         Coded by Jessica K Carter {""}
       <a href="https://github.com/JessKCode/weather-watcher-"
       target="_blank"
+      rel="noreferrer"
       >
         Open-sourced on GitHub
       </a>
