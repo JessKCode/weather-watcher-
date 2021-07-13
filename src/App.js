@@ -3,6 +3,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
+    <div className="container">
       <h1>Weather Watcher 🔎 </h1>
       <p>
         Coded by Jessica K Carter {""}
@@ -13,6 +14,7 @@ function App() {
         Open-sourced on GitHub
       </a>
       </p>
+    </div>
     </div>
   );
 }
