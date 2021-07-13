@@ -4,9 +4,11 @@ import './index.css';
 import "bootstrap/dist/css/bootstrap.css";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Weather from './Weather.js';
 
 ReactDOM.render(
   <React.StrictMode>
+    <Weather />
     <App />
   </React.StrictMode>,
   document.getElementById('root')
