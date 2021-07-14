@@ -1,9 +1,10 @@
 import React from "react";
+import "./Weather.css";
 
 export default function Weather(props){
  return (
-  <div className="Weather">
-      <form className="search">
+  <div className="body">
+      <form className="searchBar">
         <input
           type="shearch"
           placeholder="Search for a City"
@@ -17,8 +18,10 @@ export default function Weather(props){
       <div className="icon">Icon</div>
       <h2 className="temp">36°</h2>
       <p className="unit">C° | F°</p>
-      <p className="humidity">Humidity</p>
-      <p className="wind">Wind</p>
+      <div className="info">
+      <p className="humidity">Humidity: 00 |</p>
+      <p className="wind">Wind: 00</p>
+      </div>
     </div>
     );
 }

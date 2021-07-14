@@ -1,0 +1,50 @@
+.body {
+  text-align: center;
+  padding: 30px;
+  margin: 30px auto;
+  margin-bottom: 10px;
+  max-width: 400px;
+  background: linear-gradient(to right, rgb(242, 112, 156), rgb(255, 148, 114));
+}
+
+.searchBar {
+  padding: 15px;
+}
+.day {
+  padding-top: 15px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  color: rgba(255, 255, 255, 0.562);
+}
+.time {
+  padding-top: 0px;
+  color: rgba(255, 255, 255, 0.562);
+}
+.city {
+  color: white;
+}
+.description {
+  color: rgba(255, 255, 255, 0.562);
+}
+.icon {
+  font-size: 60px;
+}
+.temp {
+  color: white;
+  font-size: 65px;
+}
+.unit {
+  color: white;
+}
+.info {
+  padding: 20px;
+}
+.humidity {
+  display: inline;
+  color: rgba(255, 255, 255, 0.562);
+}
+.wind {
+  display: inline;
+  padding-left: 8px;
+  color: rgba(255, 255, 255, 0.562);
+}
