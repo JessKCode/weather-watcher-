@@ -53,10 +53,11 @@ export default function Weather(props){
   
   return( <Loader
         type="Puff"
-        color="#00BFFF"
-        height={50}
-        width={100}
+        color="#F98484"
+        height={100}
+        width={200}
         timeout={3000} //3 secs
+        className="loader"
       />);
 }
 

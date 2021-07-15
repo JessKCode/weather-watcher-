@@ -54,3 +54,7 @@
   padding-left: 8px;
   color: rgba(255, 255, 255, 0.562);
 }
+.loader {
+  padding: 100px;
+  text-align: center;
+}
