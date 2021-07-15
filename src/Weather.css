@@ -7,8 +7,14 @@
   background: linear-gradient(to right, rgb(242, 112, 156), rgb(255, 148, 114));
 }
 
-.searchBar {
+.search {
   padding: 15px;
+}
+.searchBar {
+  background-color: rgba(255, 255, 255, 0.432);
+  border: rgba(255, 255, 255, 0.726) solid 1px;
+  border-radius: 2px;
+  color: white;
 }
 .day {
   padding-top: 15px;
