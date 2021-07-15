@@ -4,18 +4,20 @@ import ReactAnimatedWeather from 'react-animated-weather';
 import axios from "axios";
 import "./Weather.css";
 
-export default function Weather(props){
-  
-  const [ready, setReady] = useState (false);
-  const [temperature, setTemperature] = useState(null);
-
+export default function Weather(props){  
+  const [weatherData, setWeatherData] = useState({ready: false});
   function handleResponse(response) {
     console.log(response.data);
-    setTemperature(Math.round (response.data.main.temp));
-    setReady(true);
+    setWeatherData({
+      ready: true,
+      city: response.data.name,
+      temp: Math.round (response.data.main.temp),
+      humidity: response.data.main.humidity,
+      wind: response.data.wind.speed,
+    });
   }
 
-  if (ready) {
+  if (weatherData.ready) {
     return (
   <div className="body">
       <form className="search">
@@ -28,7 +30,7 @@ export default function Weather(props){
       </form>
       <p className="day">Day, Date</p>
       <p className="time">Time</p>
-      <h1 className="city">City</h1>
+      <h1 className="city">{weatherData.city}</h1>
       <p className="description"> Weather description </p>
       <div className="icon"> <ReactAnimatedWeather
    icon={'CLEAR_DAY'}
@@ -36,11 +38,11 @@ export default function Weather(props){
   size = {100}
   animate = {true}
   /> </div>
-      <h2 className="temp">{temperature}°</h2>
+      <h2 className="temp">{weatherData.temp}°</h2>
       <p className="unit">C° | F°</p>
       <div className="info">
-      <p className="humidity">Humidity: 00 |</p>
-      <p className="wind">Wind: 00</p>
+      <p className="humidity">Humidity: {weatherData.humidity}% |</p>
+      <p className="wind">Wind: {weatherData.wind}mph </p>
       </div>
     </div>
     );
@@ -53,7 +55,7 @@ export default function Weather(props){
   
   return( <Loader
         type="Puff"
-        color="#F98484"
+        color="#0B58CA"
         height={100}
         width={200}
         timeout={3000} //3 secs
