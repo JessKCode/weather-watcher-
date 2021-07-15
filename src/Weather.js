@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Loader from "react-loader-spinner";
-import ReactAnimatedWeather from 'react-animated-weather';
 import axios from "axios";
 import "./Weather.css";
+import Icon from "./Icon.js"
 
 export default function Weather(props){  
   const [weatherData, setWeatherData] = useState({ready: false});
@@ -11,6 +11,8 @@ export default function Weather(props){
     setWeatherData({
       ready: true,
       city: response.data.name,
+      description: response.data.weather[0].description,
+      icon: response.data.weather[0].icon,
       temp: Math.round (response.data.main.temp),
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
@@ -28,16 +30,11 @@ export default function Weather(props){
         />
         <input type="submit" value="Search" className="searchBar" />
       </form>
-      <p className="day">Day, Date</p>
+      <p className="day">day, date</p>
       <p className="time">Time</p>
       <h1 className="city">{weatherData.city}</h1>
-      <p className="description"> Weather description </p>
-      <div className="icon"> <ReactAnimatedWeather
-   icon={'CLEAR_DAY'}
-  color= {'white'}
-  size = {100}
-  animate = {true}
-  /> </div>
+      <p className="description"> {weatherData.description} </p>
+      <div className="icon"> <Icon defaultCity={weatherData.icon} /></div>
       <h2 className="temp">{weatherData.temp}°</h2>
       <p className="unit">C° | F°</p>
       <div className="info">
